@@ -19,11 +19,11 @@ public class CoralCrystalSpawner : MonoBehaviour
     [Range(0, 45)] public int angle3 = 25; //tendril 3's angel of origin
     [Range(.1f, .85f)] public float scalar = 0.5f; //scale
     [Range(.25f, .8f)] public float objpos = 0.5f;
-    public Vector3 branchScale = new Vector3(.25f, 1, .25f);
+    public Vector3 branchScale = new Vector3(.25f, 2, .25f);
     // Start is called before the first frame update
     void Start()
     {
-
+        Build();
     }
 
     // Update is called once per frame
@@ -59,6 +59,8 @@ public class CoralCrystalSpawner : MonoBehaviour
         angle3 = Random.Range(0, 45);
         scalar = Random.Range(.5f, .8f);
         objpos = Random.Range(.4f, .6f);
+        branchScale = new Vector3(Random.Range(.25f, .35f), (float) 2, Random.Range(.25f, .35f));
+        
         if (num <= 0) return; // stop recursive function
         CombineInstance inst = new CombineInstance();
         inst.mesh = MakeCube(num);

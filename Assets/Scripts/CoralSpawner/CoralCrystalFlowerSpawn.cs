@@ -22,11 +22,11 @@ public class CoralCrystalFlowerSpawn : MonoBehaviour
     [Range(0, 50)] public int angle3 = 45;
     [Range(0, 1)] public float scalar = 0.5f;
     [Range(.25f, .8f)] public float objpos = 0.5f;
-    public Vector3 branchScale = new Vector3(.25f, 1, .25f);
+    public Vector3 branchScale = new Vector3(.25f, 2, .25f);
     // Start is called before the first frame update
     void Start()
     {
-        
+        Build();
     }
 
     // Update is called once per frame
